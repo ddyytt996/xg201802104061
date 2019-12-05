@@ -29,7 +29,6 @@ public class DegreeControl extends HttpServlet {
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
         //读取参数id
         String id_str = request.getParameter("id");
         //如果id = null, 表示响应所有学位对象，否则响应id指定的学位对象

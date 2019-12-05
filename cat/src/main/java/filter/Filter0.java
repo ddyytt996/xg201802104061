@@ -5,12 +5,11 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.lang.reflect.Method;
 
-@WebFilter(filterName = "Filter 2",urlPatterns = "/*")
-public class Filter2 implements Filter {
+@WebFilter(filterName = "Filter 0",urlPatterns = "/*")
+public class Filter0 implements Filter {
     @Override
-    public void init(FilterConfig filterConfig) throws ServletException {
+    public void init(FilterConfig filterConfig) {
 
     }
 
@@ -29,13 +28,13 @@ public class Filter2 implements Filter {
             filterChain.doFilter(servletRequest,servletResponse);
         } else {
             System.out.println(method);
-            servletResponse.setCharacterEncoding("UTF-8");
+            response.setContentType("text/html;charset=utf-8");
             if (("POST-PUT").contains(method)) {
-                servletRequest.setCharacterEncoding("UTF-8");
+                request.setCharacterEncoding("UTF-8");
             }
         }
-        System.out.println("Filter 2 - setUTF begin");
+        System.out.println("Filter 0 - setUTF begin");
         filterChain.doFilter(servletRequest,servletResponse);
-        System.out.println("Filter 2 - setUTF ends");
+        System.out.println("Filter 0 - setUTF ends");
     }
 }
