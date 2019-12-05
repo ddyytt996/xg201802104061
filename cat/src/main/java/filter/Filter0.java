@@ -28,6 +28,7 @@ public class Filter0 implements Filter {
             filterChain.doFilter(servletRequest,servletResponse);
         } else {
             System.out.println(method);
+            response.setContentType("text/html;charset=UTF-8");
             response.setCharacterEncoding("UTF-8");
             if (("POST-PUT").contains(method)) {
                 request.setCharacterEncoding("UTF-8");
