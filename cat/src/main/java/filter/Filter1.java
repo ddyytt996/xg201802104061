@@ -24,8 +24,8 @@ public class Filter1 implements Filter {
         HttpServletResponse response = (HttpServletResponse)servletResponse;
         String path = request.getRequestURI();
         Calendar calendar = Calendar.getInstance();
-        response.setContentType("text/html;charset=UTF-8");
-        request.setCharacterEncoding("UTF-8");
+        //response.setContentType("text/html;charset=UTF-8");
+        //.setCharacterEncoding("UTF-8");
         SimpleDateFormat simpleFormatter = new SimpleDateFormat("yyyy年MM月dd日HH: mm");
         System.out.println(path +" @" + simpleFormatter.format(calendar.getTime()));
         filterChain.doFilter(servletRequest,servletResponse);

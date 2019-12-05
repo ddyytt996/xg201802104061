@@ -23,19 +23,19 @@ public class Filter2 implements Filter {
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest)servletRequest;
         HttpServletResponse response = (HttpServletResponse)servletResponse;
-
         String path = request.getRequestURI();
         String method = request.getMethod();
         if(path.contains("/myapp")){
             filterChain.doFilter(servletRequest,servletResponse);
         } else {
             System.out.println(method);
-            response.setContentType("charset=UTF-8");
+            servletResponse.setCharacterEncoding("UTF-8");
             if (("POST-PUT").contains(method)) {
-                request.setCharacterEncoding("UTF-8");
+                servletRequest.setCharacterEncoding("UTF-8");
             }
         }
-            filterChain.doFilter(servletRequest,servletResponse);
-            System.out.println("Filter 2 - setUTF ends");
+        System.out.println("Filter 2 - setUTF begin");
+        filterChain.doFilter(servletRequest,servletResponse);
+        System.out.println("Filter 2 - setUTF ends");
     }
 }
