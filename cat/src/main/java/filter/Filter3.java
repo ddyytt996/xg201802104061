@@ -25,6 +25,7 @@ public class Filter3 implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse res = (HttpServletResponse)response;
+        //res.setCharacterEncoding("UTF-8");
         HttpSession session = req.getSession(false);
         JSONObject message = new JSONObject();
         String URI = ((HttpServletRequest) request).getRequestURI();

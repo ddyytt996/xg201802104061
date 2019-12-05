@@ -9,7 +9,7 @@ import java.io.IOException;
 @WebFilter(filterName = "Filter 0",urlPatterns = "/*")
 public class Filter0 implements Filter {
     @Override
-    public void init(FilterConfig filterConfig) {
+    public void init(FilterConfig filterConfig) throws ServletException {
 
     }
 
@@ -28,7 +28,7 @@ public class Filter0 implements Filter {
             filterChain.doFilter(servletRequest,servletResponse);
         } else {
             System.out.println(method);
-            response.setContentType("text/html;charset=utf-8");
+            response.setCharacterEncoding("UTF-8");
             if (("POST-PUT").contains(method)) {
                 request.setCharacterEncoding("UTF-8");
             }

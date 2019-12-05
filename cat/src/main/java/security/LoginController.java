@@ -20,6 +20,8 @@ public class LoginController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
+        resp.setCharacterEncoding("UTF-8");
+        resp.setContentType("text/html;charset=utf-8");
         JSONObject message = new JSONObject();
         try{
             User user = UserService.getInstance().login(username,password);
