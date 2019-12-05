@@ -64,7 +64,7 @@ public final class UserDao {
 
     public User login(String username,String password) throws SQLException {
         Connection connection = JdbcHelper.getConn();
-        PreparedStatement preparedStatement = connection.prepareStatement("select * from teacher where username = ? and " +
+        PreparedStatement preparedStatement = connection.prepareStatement("select * from user where username = ? and " +
                 "password = ?");
         preparedStatement.setString(1,username);
         preparedStatement.setString(2,password);
