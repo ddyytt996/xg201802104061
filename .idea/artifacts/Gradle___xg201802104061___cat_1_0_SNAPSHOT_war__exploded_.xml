@@ -10,10 +10,10 @@
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/cat/build/libs/exploded/cat-1.0-SNAPSHOT.war/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="xg201802104061.cat.main/web/Web Gradle : cat-1.0-SNAPSHOT.war" />
+      <element id="javaee-facet-resources" facet="java web作业.xg201802104061.cat.main/web/Web Gradle : cat-1.0-SNAPSHOT.war" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="xg201802104061.cat.main" />
+          <element id="module-output" name="java web作业.xg201802104061.cat.main" />
           <element id="dir-copy" path="$PROJECT_DIR$/cat/build/resources/main" />
         </element>
         <element id="directory" name="lib">

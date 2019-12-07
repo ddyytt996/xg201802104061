@@ -13,7 +13,7 @@ public class CreateSession extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
-        session.setMaxInactiveInterval(5);
-        resp.getWriter().println("session will last 5s");
+        session.setMaxInactiveInterval(20);
+        resp.getWriter().println("session will last 20s");
     }
 }
