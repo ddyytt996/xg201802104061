@@ -5,9 +5,9 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-
 @WebFilter(filterName = "Filter 0",urlPatterns = "/*")
 public class Filter0 implements Filter {
+
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
 
@@ -24,11 +24,13 @@ public class Filter0 implements Filter {
         HttpServletResponse response = (HttpServletResponse)servletResponse;
         String path = request.getRequestURI();
         String method = request.getMethod();
+        //System.out.println("filter0");
         if(path.contains("/myapp")){
+            System.out.println("this is myapp");
             filterChain.doFilter(servletRequest,servletResponse);
         } else {
             System.out.println(method);
-            response.setContentType("text/html;charset=UTF-8");
+            //response.setContentType("text/html;charset=UTF-8");
             response.setCharacterEncoding("UTF-8");
             if (("POST-PUT").contains(method)) {
                 request.setCharacterEncoding("UTF-8");
